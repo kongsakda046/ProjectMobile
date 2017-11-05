@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/book.js"></script>
+    <script src="js/table.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link rel="stylesheet" href="css/nar.css">
+    <link rel="stylesheet" href="css/table.css">
+<!--
+<script>
+    var studentsArray= [];
+    var selectedIndex=-1;
+
+    function init(){
+      document.getElementById("tablerows").innerHTML="";
+  h      if(localStorage.studentsRecord){
+          studentsArray=JSON.parse(localStorage.studentsRecord);
+            for(var i=0;i<studentsArray.length;i++){
+              prepareTableCell(i,studentsArray[i].firstname,studentsArray[i].lastname);
+            }
+        }
+    }
+    
+    function onSubmit(){
+        var firstName=document.getElementById("firstname").value;
+        var lastName=document.getElementById("lastname").value;
+    
+        var stuObj={firstname:firstName,lastname:lastName};
+       if(selectedIndex===-1){
+        studentsArray.push(stuObj);
+       }else{
+        studentsArray.splice(selectedIndex,1,stuObj);
+       }
+    
+        localStorage.studentsRecord=JSON.stringify(studentsArray);
+    
+init();         
+        document.getElementById("firstname").value="";
+        document.getElementById("lastname").value="";
+    }
+    function prepareTableCell(index,firstName,lastName){
+        var table = document.getElementById("tablerows");
+        var row = table.insertRow();
+        var firstNameCell = row.insertCell(0);
+        var lastNameCell = row.insertCell(1);
+        var actionCell=row.insertCell(2);
+    
+        firstNameCell.innerHTML=firstName;
+        lastNameCell.innerHTML=lastName;
+        actionCell.innerHTML='<button>Edit</button><br/> <button onclick="deleteTableRow('+index+')">Delete</button>';
+    }
+    function deleteTableRow(index){ 
+    var table=document.getElementById("regtable");
+    table.deleteRow(index+1);
+    studentsArray.splice(index,1);
+    localStorage.studentsRecord=JSON.stringify(studentsArray);
+    init();  
+    }
+    </script>
+  -->
+  <title>made</title>
+</div>
+    <ul class="nav">
+      <li ><a href="#">Home</a>
+<ul>
+      <li><a href="index.html">logout</a></li>
+      
+</li>
+</ul>
+    </ul>
+  </div>
+</head>
+<br/>
+<br/>
+<br/><br/>
+<br/>
+<br/>
+<body onload="init()" class="a">
+  <aside class="leftbar">
+    
+      <div id='div2'>
+        <center>
+        <h2>Add book</h2>
+      </div>
+      
+      <div id='div1'>
+          <center>
+          <h2>list book</h2>
+        </div>
+      <br/>
+      <br/> <br/> <br/> <br/>
+      <div id='div2'>
+    <fieldset >
+        <label for="firstname"><span>NameBook</span></label>
+        <input type="text" placeholder="enter name" id="firstname">
+      </fieldset>
+      <fieldset >
+      <label for="lastname"><span>Namefiction</span></label>
+      <input type="text" placeholder="enter lastname" id="lastname">
+      </fieldset>
+
+      <fieldset >
+          <select id="typebook">
+              <option value="Novel">Novel</option>
+              <option value="History">History</option>
+              <option value="Learning">Learning</option>
+              <option value="Technology">Technology</option>
+            </select>
+          </fieldset>
+
+          <label for="lastname"><span>Cost</span></label>
+          <input type="text" placeholder="enter cost" id="cost">
+          <label for="lastname"><span>Bath</span></label>
+          </fieldset>
+
+
+      <fieldset >
+      <label for="lastname"><span></span></label>
+      <button type="submit"id="submit" onclick="onSubmit()">input</button>
+      <button type="submit"id="clear" onclick="onClarPressed ()">Clear</button>
+      
+      </div >
+    </fieldset>
+      </aside>
+      <aside class="rightbar">
+
+        
+          <div id='div1'>
+        <table id="regtable"   border="2">
+ 
+<thead>
+          <tr>
+            <th>Name-book</th>
+              <th>Name Fiction</th>
+              <td>Typebook</th>
+                <td>Cost</th>
+              <td>Action</th>
+            </tr>
+          </thead>
+          
+
+          <tbody id="tablerows">
+
+          </tbody>
+        </div>
+        </table>
+      </div>
+    </aside>
+</body>
+</html>

@@ -1,0 +1,53 @@
+{
+  "information": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin",
+      "name": "Dear",
+      "status": "admin"
+    },
+    {
+      "username": "1235",
+      "password": "1235",
+      "name": "don",
+      "status": "user",
+      "id": 2
+    },
+    {
+      "username": "",
+      "password": "",
+      "name": "",
+      "status": "user",
+      "id": 3
+    },
+    {
+      "username": "e",
+      "password": "e",
+      "name": "e",
+      "status": "user",
+      "id": 4
+    },
+    {
+      "username": "ee",
+      "password": "ee",
+      "name": "ee",
+      "status": "user",
+      "id": 5
+    },
+    {
+      "username": "w",
+      "password": "w",
+      "name": "w",
+      "status": "user",
+      "id": 6
+    },
+    {
+      "username": "",
+      "password": "",
+      "name": "",
+      "status": "user",
+      "id": 7
+    }
+  ]
+}

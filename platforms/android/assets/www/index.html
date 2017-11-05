@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+   <link rel="stylesheet" href="psupin.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+  
+    <link href="https://fonts.googleapis.com/css?family=Patua+One" rel="stylesheet">
+    <link rel="stylesheet" href="css/onsenui.css">
+    <link rel="stylesheet" href="css/onsen-css-components.min.css">
+    <link rel="stylesheet" href="css/psupin.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/onsenui.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/psupin.js"></script>
+    <script src="js/map.js"></script>
+    
+    <script>
+      function initMap() {
+            document.addEventListener("init", function (event) {
+              console.log('ready');
+                myMap();
+            });
+        }
+    </script>
+     
+
+    <title>PSUPIN</title>
+    <script id="template" type="x-tmpl-mustache">
+
+      <div id="posts{{id}}">  
+          <div class="camera-view">
+          <ons-list-item class="post_title">
+           
+                <img class="post-image" src="{{picture}}"> 
+                Description:{{desc}}
+                
+              </div>
+              <br>
+          </div>
+        
+          
+     
+      </div>
+    </script>
+  </head>
+  <body>
+    <ons-page>
+      <ons-tabbar id="tabbar">
+        <ons-tab icon="ion-home" page="home.html"active >
+        </ons-tab>
+        <ons-tab icon="fa-plus-square-o" page="camera.html">
+        </ons-tab>
+        <ons-tab icon="ion-ios-location" page="map.html">
+        </ons-tab>
+        
+      </ons-tabbar>
+      
+<!-- The Home Page -->
+<template id="home.html">
+    <ons-page class="main_pages" id="home-page">
+      <ons-toolbar>
+        <div class="center">Home Page</div>
+        
+      </ons-toolbar>
+     
+      <div id = "posts"></div>
+      
+      
+     
+    </ons-page>
+  </template>
+  
+  <!-- map -->
+      <template id="map.html">
+          <ons-page class="main_pages"  id="camera-page">
+            <ons-toolbar>
+              <div class="center" id="toolbar-title">Location</div>
+            </ons-toolbar>
+            <p style="text-align: center;">
+                PSU Pins Map.<br>
+                <button id="loadmap" class="button button--material">Load Map</button>
+                <div id="map" >          
+                  </div> 
+                  <script async defer
+                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIBCQj2LS1UZ9i43pbfbDRUFlbgjhtO2Q&libraries=places&callback=initAutocomplete&callback=initMap">
+                    </script>
+                    
+              </p>      
+            <section style="padding: 8px;text-align: center;">     
+              <br>
+              <p style=" text-align: center;">  
+               <div id="location"></div>
+               <div id="clear"></div>
+               <br>
+               <br>
+
+               <br>
+               
+               <ons-toolbar-button  onclick="location.replace('viewdb.html')">ViewDB</ons-toolbar-button>
+               
+                  </p>         
+          </ons-page>
+        </template>
+    </ons-page>
+
+
+      <!-- camera -->
+    <template id="camera.html">
+      <ons-page class="main_pages"  id="camera-page">
+        <ons-toolbar>
+          <div class="center" id="toolbar-title">UploadPicture</div>
+        </ons-toolbar>
+        <div class="camera-view">
+          Photo Gallery
+          <br>
+         
+          
+          <ons-button id="pic" class="button button--material" > 
+              <ons-icon class="camera-icon" icon="ion-android-camera"></ons-icon>
+            </ons-button> <br>
+              <input ="textarea" class="textarea textarea--transparent" placeholder="URL...." id="picture"></textarea><br>
+              <input ="textarea" class="textarea textarea--transparent" placeholder="Text message...." id="desc"></textarea>
+
+              <button type="button" class="btn btn-primary btn-lg" id="postpin" value="Post">SUBMIT</button>
+          
+        </div>
+           <div class="camera-button">
+           Take a photo
+            <br>
+           
+            <ons-button id="hello" class="button button--material" > 
+                <ons-icon class="camera-icon" icon="ion-android-camera"></ons-icon>
+              </ons-button>
+            <div id="show">          
+            </div> 
+          </div>
+         
+      </ons-page>
+    </template>
+    
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clear DB</title>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="js/viewdb.js"></script>
+   <script src="js/test.js"></script>
+   <script>
+   
+   </script>
+    <script id="template" type="x-tmpl-mustache">
+        <p>
+        <h4>id:{{id}}</h4>
+        <h>{{latitude}}</h><ons-input id="editlat" modifier="underbar" placeholder="latitude" float></ons-input>
+        <h>{{longitude}}</h><ons-input id="editlon" modifier="underbar" placeholder="longitude" float></ons-input>
+          <button id="e" value="{{id}}">edit</button>
+         
+        </p>
+                  
+                           
+    </script>
+    
+</head>
+
+<body>
+        <ons-toolbar>
+                <div class="left">
+                  <ons-toolbar-button onclick="location.replace('index.html')">Home</ons-toolbar-button>
+                </div>
+                <div class="center">Edit DB</div>
+                <div class="right">
+                  <ons-toolbar-button  onclick="location.replace('viewdb.html')">view DB</ons-toolbar-button>
+                </div>
+              </ons-toolbar>
+         
+              <br>
+              <br>
+              <br>
+    <div id ="posts"></div>
+    <br>
+    <div class="bottom-bar">
+            <div class="bottom-bar__line-height" style="text-align:center">Edit Locations</div>
+          </div>
+
+    
+    
+</body>
+
+</html>

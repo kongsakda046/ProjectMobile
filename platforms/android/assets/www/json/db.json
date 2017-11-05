@@ -1,0 +1,26 @@
+{
+  "location": [
+    {
+      "latitude": "7.5115102",
+      "longitude": "99.59516939999999",
+      "id": 1
+    },
+    {
+      "latitude": "7.8925826",
+      "longitude": "98.3549441",
+      "id": 2
+    }
+  ],
+  "posts": [
+    {
+      "id": 6,
+      "desc": "C",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Pic_de_neige_cordier_Face_E.jpg"
+    },
+    {
+      "desc": "aaaa",
+      "picture": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Pic_de_neige_cordier_Face_E.jpg",
+      "id": 7
+    }
+  ]
+}

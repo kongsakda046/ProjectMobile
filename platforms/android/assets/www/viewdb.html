@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clear DB</title>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="js/viewdb.js"></script>
+    <script>
+        
+        function deleted(id){
+            var url = "http://localhost:3000/location";
+
+            console.log("deleted");  
+            
+            $.ajax({
+                url: url+"/"+id,// 2  is id you want to delete
+                method: "DELETE",
+                success: function (data, status, xhr) {
+                    location.reload();
+                  console.log(data);
+                }
+              })
+        }
+    </script>
+    
+    <script id="template" type="x-tmpl-mustache">
+            <button class="toolbar-button toolbar-button--outline" onclick="deleted({{id}})">
+                    
+                                        <i class="ion-trash-a" style="font-size:17px"></i> 
+                                        <h4>id:{{id}}</h4>                                        
+                                        <h>latitude:{{latitude}}</h>
+                                         <h>longitude:{{longitude}}</h>
+                                      </button>
+                           
+    </script>
+    
+</head>
+
+<body>
+        <ons-toolbar>
+                <div class="left">
+                  <ons-toolbar-button onclick="location.replace('index.html')">Home</ons-toolbar-button>
+                </div>
+                <div class="center">Delete DB</div>
+                <div class="right">
+                  <ons-toolbar-button  onclick="location.replace('editdb.html')">Edit DB</ons-toolbar-button>
+                </div>
+              </ons-toolbar>
+    <br>
+    <br>
+    <br>
+    <div id ="posts"></div>
+    <br>
+    
+    
+</body>
+
+</html>
